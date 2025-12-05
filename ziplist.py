@@ -17,7 +17,7 @@ file_name = ""
 
 # Error message: "Usage: python ziplist.py <filename.zip>"
 if len(sys.argv) != 2:
-    sys.exit(f"Bad zip file: python ziplist.py {file_name}")
+    sys.exit(f"Usage: python ziplist.py <file.zip>") 
 
 file_name = str(sys.argv[1])
 
@@ -36,19 +36,19 @@ file_name = str(sys.argv[1])
 
 try:
 
-    zip = zipfile.ZipFile('filename.zip')
+    zip = zipfile.ZipFile(file_name)
 
-    print (zip.namelist())
+    print(zip.namelist())
 
-    f = zip.open("file_inside_zip.txt")
+    (f"Bad zip file: python ziplist.py {file_name}")
 
-    content = f.read()
-    f = open('file_inside_zip.extracted.txt', 'wb')
-    f.write(content)
-    f.close()
 
 except FileNotFoundError: 
 
     sys.exit(f"File not found: python ziplist.py {file_name}")
+
+except:
+    print(f"Bad zip file: python ziplist.py {file_name}")
+
 
 
