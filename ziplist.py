@@ -1,6 +1,6 @@
 
-# Name:
-# Username:
+#Name: Saloni Pradhan
+#Student ID: 201829493
 
 # Lists contents of a zip archive
 # usage: python ziplist.py <zipfile>
