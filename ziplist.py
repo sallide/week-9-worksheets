@@ -40,15 +40,14 @@ try:
 
     print(zip.namelist())
 
-    (f"Bad zip file: python ziplist.py {file_name}")
 
 
 except FileNotFoundError: 
 
     sys.exit(f"File not found: python ziplist.py {file_name}")
 
-except:
-    print(f"Bad zip file: python ziplist.py {file_name}")
+except zipfile.BadZipFile:
+    print(f"Bad zip file: python ziplist.py {file_name}", file=sys.stderr)
 
 
 
