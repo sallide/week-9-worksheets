@@ -33,7 +33,7 @@ try:
         if line.strip() != "":
             number_of_lines +=1
 
-    sys.exit(f"{file_name} has {number_of_lines} lines")
+    print(f"{file_name} has {number_of_lines} lines")
 
 # Success message: "{file_name} has {number_of_lines} lines"
 
