@@ -11,11 +11,15 @@
 
 import sys
 #from zipfile import ...   # tools in this module can be used
-
+import zipfile
 # filename is a command line argument 
 file_name = ""
 
 # Error message: "Usage: python ziplist.py <filename.zip>"
+if len(sys.argv) != 2:
+    sys.exit(f"Bad zip file: python ziplist.py {file_name}")
+
+file_name = str(sys.argv[1])
 
 # Error message: "File not found: python ziplist.py {file_name}"
 
@@ -29,3 +33,22 @@ file_name = ""
 # find_file.py
 # password.py
 # rockpaperscissors.py
+
+try:
+
+    zip = zipfile.ZipFile('filename.zip')
+
+    print (zip.namelist())
+
+    f = zip.open("file_inside_zip.txt")
+
+    content = f.read()
+    f = open('file_inside_zip.extracted.txt', 'wb')
+    f.write(content)
+    f.close()
+
+except FileNotFoundError: 
+
+    sys.exit(f"File not found: python ziplist.py {file_name}")
+
+
